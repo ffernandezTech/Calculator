@@ -29,5 +29,11 @@ body{
     border: black 1px solid;
     width: 100px;
     height: 80px;
-    display: inline-flex;
+
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    margin-right: 5px;
 }
