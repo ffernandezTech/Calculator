@@ -6,15 +6,15 @@ function getSubtraction(arr1, arr2)
 {
     return arr1-arr2;
 }
-function getMultiplication{
+function getMultiplication(arr1,arr2){
     return arr1*arr2;
 }
-function getDivision{
+function getDivision(arr1,arr2){
     return arr1/arr2;
 }
 function getOperate(operation, arr1, arr2){
     //user saves operation and numbers after pressing enter.
-    
+
 
     //simple switch case that takes our parameter and  compares to our case
     //and then calls the right function
