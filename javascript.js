@@ -13,8 +13,8 @@ function getDivision{
     return arr1/arr2;
 }
 function getOperate(operation, arr1, arr2){
-    //User selects button and that press would call this function with the desired
-    //operation. Try it with e.targetValue and also getting our numbers to be used
+    //user saves operation and numbers after pressing enter.
+    
 
     //simple switch case that takes our parameter and  compares to our case
     //and then calls the right function
@@ -32,6 +32,4 @@ function getOperate(operation, arr1, arr2){
         break;
 
     }
-
-
 }
