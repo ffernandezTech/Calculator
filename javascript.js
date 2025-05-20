@@ -12,4 +12,26 @@ function getMultiplication{
 function getDivision{
     return arr1/arr2;
 }
+function getOperate(operation, arr1, arr2){
+    //User selects button and that press would call this function with the desired
+    //operation. Try it with e.targetValue and also getting our numbers to be used
 
+    //simple switch case that takes our parameter and  compares to our case
+    //and then calls the right function
+
+    //using more standard symbols for each operate.
+    switch(operation){
+        case '+': getAddition(arr1, arr2);
+        break;
+        case '-': getSubtraction(arr1,arr2);
+        break;
+        case 'x': getMultiplication(arr1, arr2);
+        break;
+        //need to copy paste this divison symbol.
+        case '÷': getDivision(arr1,arr2);
+        break;
+
+    }
+
+
+}
