@@ -1,0 +1,33 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+body{
+    height: 950px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: black 1px solid; */
+}
+
+
+#main-container{
+    
+    display: flex;
+    width:500px;
+    height: 200px;
+    flex-wrap: wrap;
+
+
+}
+.btn{
+    border: black 1px solid;
+    width: 100px;
+    height: 80px;
+    display: inline-flex;
+}
