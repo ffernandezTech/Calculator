@@ -21,9 +21,16 @@ body{
     display: flex;
     width:500px;
     height: 200px;
+    flex-direction: column;
+
+
+}
+.main-btnGroup{
+    display: flex;
+    width:500px;
+    height: 200px;
     flex-wrap: wrap;
-
-
+ 
 }
 .btn{
     border: black 1px solid;
@@ -36,4 +43,5 @@ body{
     align-items: center;
     font-size: 25px;
     margin-right: 5px;
+    margin-bottom: 5px;
 }
