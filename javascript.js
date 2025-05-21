@@ -33,3 +33,21 @@ function getOperate(operation, arr1, arr2){
 
     }
 }
+
+
+const btnCall = document.querySelectorAll('.btn');
+let num = [];
+// console.log(btnCall);
+
+btnCall.forEach(btnPress=> {
+    
+    btnPress.addEventListener('click',(e)=>{
+
+    
+    
+    num.push(parseInt(btnPress.textContent));
+
+    console.log(num);
+    
+});
+});
