@@ -36,7 +36,8 @@ function getOperate(operation, arr1, arr2){
 
 
 const btnCall = document.querySelectorAll('.btn');
-let num = [];
+let num = '';
+let numDisplay1;
 // console.log(btnCall);
 
 btnCall.forEach(btnPress=> {
@@ -45,9 +46,15 @@ btnCall.forEach(btnPress=> {
 
     
     
-    num.push(parseInt(btnPress.textContent));
+    num+=btnPress.textContent;
+
+       
+    
 
     console.log(num);
-    
+    console.log(typeof num);
+
+    console.log(parseInt(num));
+
 });
 });
