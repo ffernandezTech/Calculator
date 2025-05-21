@@ -45,3 +45,29 @@ body{
     margin-right: 5px;
     margin-bottom: 5px;
 }
+.btnDecimal{
+     border: black 1px solid;
+    width: 150px;
+    height: 80px;
+
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.btnEqual{
+     border: black 1px solid;
+    width: 150px;
+    height: 80px;
+
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
