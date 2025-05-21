@@ -19,17 +19,21 @@ body{
 #main-container{
     
     display: flex;
-    width:500px;
-    height: 200px;
-    flex-direction: column;
-
-
+    width:650px;
+    height: 700px;
+    flex-direction: row;
+    border: solid 1px black;
+    padding: 15px;
+    
 }
 .main-btnGroup{
     display: flex;
-    width:500px;
-    height: 200px;
+    width:490px;
+    height: 400px;
     flex-wrap: wrap;
+    align-self: flex-end;
+   
+    /* border: solid green 5px; */
  
 }
 .btn{
@@ -44,12 +48,14 @@ body{
     font-size: 25px;
     margin-right: 5px;
     margin-bottom: 5px;
+
+    background-color: #f3f5f6;
 }
 .btnDecimal{
      border: black 1px solid;
     width: 150px;
     height: 80px;
-
+    background-color: #f3f5f6;
     border-radius: 25px;
     display: flex;
     justify-content: center;
@@ -70,18 +76,29 @@ body{
     font-size: 25px;
     margin-right: 5px;
     margin-bottom: 5px;
+
+    background-color: #0b57d0;
 }
 
+.sub-btnGroup{
+  display: flex;
+    width:150px;
+    height: 400px;
+    flex-direction: column;
+    align-self: flex-end;
+    /* border: solid 5px purple; */
+}
 .btnOps{
-      border: black 1px solid;
+ border: black 1px solid;
     width: 150px;
     height: 80px;
 
+    background-color: #e5edff;
     border-radius: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 25px;
-    margin-right: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+    
 }
