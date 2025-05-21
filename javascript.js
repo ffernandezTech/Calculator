@@ -35,26 +35,26 @@ function getOperate(operation, arr1, arr2){
 }
 
 
-const btnCall = document.querySelectorAll('.btn');
+const btnNumPad = document.querySelectorAll('.btn');
 let num = '';
 let numDisplay1;
 // console.log(btnCall);
 
-btnCall.forEach(btnPress=> {
+//For each btn in our numpad we add the text content into a string
+btnNumPad.forEach(btnNum=> {
     
-    btnPress.addEventListener('click',(e)=>{
+    btnNum.addEventListener('click',(e)=>{
 
     
     
-    num+=btnPress.textContent;
+    num+= btnNum.textContent;
 
-       
+    
     
 
-    console.log(num);
-    console.log(typeof num);
-
-    console.log(parseInt(num));
+    // console.log(num);
+    // console.log(typeof num);
+    // console.log(parseInt(num));
 
 });
 });
