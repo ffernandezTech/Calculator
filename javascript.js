@@ -49,8 +49,8 @@ function setValues(string)
 }
 
 const btnNumPad = document.querySelectorAll('.btn');
-let num = '';
-let numDisplay1;
+let num1 = '';
+let num2 ='';
 // console.log(btnCall);
 
 //For each btn in our numpad we add the text content into a string
