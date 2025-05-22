@@ -19,12 +19,31 @@ body{
 #main-container{
     
     display: flex;
-    width:650px;
-    height: 700px;
-    flex-direction: row;
-    border: solid 1px black;
+   
     padding: 15px;
+    flex-direction: column;
+    border: solid 2px black;
+    justify-content: center;
+    align-items: center;
     
+}
+
+.btnGroups{
+     display: flex;
+    width:650px;
+    height: 450px;
+    flex-direction: row;
+    /* border: solid 1px black; */
+    padding: 15px; 
+}
+.display{
+    background-color: lightgrey;
+    width: 620px;
+    height: 200px;
+    align-content: flex-end;
+    text-align: end;
+    font-size: 40px;
+    color: cyan;
 }
 .main-btnGroup{
     display: flex;
@@ -36,6 +55,15 @@ body{
     /* border: solid green 5px; */
  
 }
+.sub-btnGroup{
+  display: flex;
+    width:150px;
+    height: 400px;
+    flex-direction: column;
+    align-self: flex-end;
+    /* border: solid 5px purple; */
+}
+
 .btn{
     border: black 1px solid;
     width: 150px;
@@ -78,15 +106,6 @@ body{
 
     background-color: #0b57d0;
 }
-
-.sub-btnGroup{
-  display: flex;
-    width:150px;
-    height: 400px;
-    flex-direction: column;
-    align-self: flex-end;
-    /* border: solid 5px purple; */
-}
 .btnOps{
  border: black 1px solid;
     width: 150px;
@@ -101,3 +120,5 @@ body{
     margin-bottom: 20px;
     
 }
+
+
