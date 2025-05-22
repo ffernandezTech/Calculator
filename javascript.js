@@ -34,6 +34,19 @@ function getOperate(operation, arr1, arr2){
     }
 }
 
+const value1 = document.createElement('p');
+const displayDIV = document.querySelector('.display');
+
+
+function setValues(string)
+{
+
+    value1.textContent = string;
+
+    displayDIV.appendChild(value1);
+
+
+}
 
 const btnNumPad = document.querySelectorAll('.btn');
 let num = '';
@@ -49,7 +62,7 @@ btnNumPad.forEach(btnNum=> {
     
     num+= btnNum.textContent;
 
-    
+    setValues(num);
     
 
     // console.log(num);
