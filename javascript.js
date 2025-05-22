@@ -48,6 +48,25 @@ function setValues(string)
 
 }
 
+
+function setOperation(string)
+{
+    value1.textContent= value1.textContent +" " + string;
+ 
+   
+}
+const btnOps = document.querySelectorAll('.btnOps');
+let operations = '';
+
+btnOps.forEach(btnOperation=>{
+    btnOperation.addEventListener('click',()=>{
+
+        operations= btnOperation.textContent;
+        setOperation(operations);
+        // console.log(operation);
+    })
+});
+
 const btnNumPad = document.querySelectorAll('.btn');
 let num1 = '';
 let num2 ='';
@@ -60,9 +79,9 @@ btnNumPad.forEach(btnNum=> {
 
     
     
-    num+= btnNum.textContent;
+    num1+= btnNum.textContent;
 
-    setValues(num);
+    setValues(num1);
     
 
     // console.log(num);
@@ -71,3 +90,4 @@ btnNumPad.forEach(btnNum=> {
 
 });
 });
+
