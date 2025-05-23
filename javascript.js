@@ -42,9 +42,17 @@ const displayDIV = document.querySelector('.display');
 function setValues(setUserinput)
 {
 
-    displayLine.textContent = setUserinput;
+    
 
-    displayDIV.appendChild(displayLine);
+    if(getOps=== '')
+    {
+        displayLine.textContent = setUserinput;
+        displayDIV.appendChild(displayLine);
+    }
+    else 
+    {
+        displayLine.textContent = displayLine.textContent + setUserinput;
+    }
 
 
 }
@@ -56,7 +64,7 @@ function setOperation(desiredOperation)
 {
 
     getOps=desiredOperation;
-    displayLine.textContent= displayLine.textContent +" " + desiredOperation;
+    displayLine.textContent= displayLine.textContent +" " + desiredOperation + ' ';
  
    
 }
