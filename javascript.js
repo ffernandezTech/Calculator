@@ -34,27 +34,33 @@ function getOperate(operation, arr1, arr2){
     }
 }
 
-const value1 = document.createElement('p');
+//function and variables to create the display
+const displayLine = document.createElement('p');
 const displayDIV = document.querySelector('.display');
 
 
-function setValues(string)
+function setValues(setUserinput)
 {
 
-    value1.textContent = string;
+    displayLine.textContent = setUserinput;
 
-    displayDIV.appendChild(value1);
+    displayDIV.appendChild(displayLine);
 
 
 }
 
 
-function setOperation(string)
+//function to add the operation to the string and save said operation to be used latter
+let getOps = '';
+function setOperation(desiredOperation)
 {
-    value1.textContent= value1.textContent +" " + string;
+
+    getOps=desiredOperation;
+    displayLine.textContent= displayLine.textContent +" " + desiredOperation;
  
    
 }
+
 const btnOps = document.querySelectorAll('.btnOps');
 let operations = '';
 
@@ -69,7 +75,7 @@ btnOps.forEach(btnOperation=>{
 
 const btnNumPad = document.querySelectorAll('.btn');
 let num1 = '';
-let num2 ='';
+let num2 = '';
 // console.log(btnCall);
 
 //For each btn in our numpad we add the text content into a string
@@ -78,10 +84,17 @@ btnNumPad.forEach(btnNum=> {
     btnNum.addEventListener('click',(e)=>{
 
     
-    
-    num1+= btnNum.textContent;
+        if(operations === '')
+        {
+            num1+= btnNum.textContent;
+            setValues(num1);
+        }
+        else 
+        {
+            num2 += btnNum.textContent;
+            setValues(num2);
+        }
 
-    setValues(num1);
     
 
     // console.log(num);
