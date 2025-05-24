@@ -37,7 +37,8 @@ body{
     padding: 15px; 
 }
 .display{
-    background-color: lightgrey;
+    background-color: #FAF9F6 ;
+    border: solid black 2px;
     width: 620px;
     height: 200px;
     align-content: flex-end;

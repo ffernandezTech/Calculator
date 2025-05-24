@@ -51,7 +51,13 @@ function setValues(setUserinput)
     }
     else 
     {
-        displayLine.textContent = displayLine.textContent + setUserinput;
+        let displayText = displayLine.textContent.concat(setUserinput);
+
+
+        // console.log(displayText);
+
+        displayLine.textContent= displayText;
+ 
     }
 
 
@@ -91,6 +97,11 @@ btnNumPad.forEach(btnNum=> {
     
     btnNum.addEventListener('click',(e)=>{
 
+
+        if(displayLine.textContent.length > 20)
+        {
+            displayLine.style.fontSize = '25px';
+        }
     
         if(operations === '')
         {
@@ -100,7 +111,7 @@ btnNumPad.forEach(btnNum=> {
         else 
         {
             num2 += btnNum.textContent;
-            setValues(num2);
+            setValues(btnNum.textContent);
         }
 
     
