@@ -1,18 +1,18 @@
-function getAddition(arr1, arr2)
+function getAddition(number1, number2)
 {
-    return arr1+arr2;
+    return number1+number2;
 }
-function getSubtraction(arr1, arr2)
+function getSubtraction(number1, number2)
 {
-    return arr1-arr2;
+    return number1-number2;
 }
-function getMultiplication(arr1,arr2){
-    return arr1*arr2;
+function getMultiplication(number1,number2){
+    return number1*number2;
 }
-function getDivision(arr1,arr2){
-    return arr1/arr2;
+function getDivision(number1,number2){
+    return number1/number2;
 }
-function getOperate(operation, arr1, arr2){
+function getOperate(operation, number1, number2){
     //user saves operation and numbers after pressing enter.
 
 
@@ -21,14 +21,14 @@ function getOperate(operation, arr1, arr2){
 
     //using more standard symbols for each operate.
     switch(operation){
-        case '+': getAddition(arr1, arr2);
+        case '+': displayLine.textContent = getAddition(number1, number2);
         break;
-        case '-': getSubtraction(arr1,arr2);
+        case '-': displayLine.textContent =getSubtraction(number1,number2);
         break;
-        case 'x': getMultiplication(arr1, arr2);
+        case 'x':displayLine.textContent =getMultiplication(number1, number2);
         break;
         //need to copy paste this divison symbol.
-        case '÷': getDivision(arr1,arr2);
+        case '÷':displayLine.textContent= getDivision(number1,number2);
         break;
 
     }
@@ -44,7 +44,7 @@ function setValues(setUserinput)
 
     
 
-    if(getOps=== '')
+    if(operations=== '')
     {
         displayLine.textContent = setUserinput;
         displayDIV.appendChild(displayLine);
@@ -65,12 +65,11 @@ function setValues(setUserinput)
 
 
 //function to add the operation to the string and save said operation to be used latter
-let getOps = '';
-function setOperation(desiredOperation)
+// let getOps = '';
+function setOperation()
 {
 
-    getOps=desiredOperation;
-    displayLine.textContent= displayLine.textContent +" " + desiredOperation + ' ';
+    displayLine.textContent= displayLine.textContent +" " + operations + ' ';
  
    
 }
@@ -82,7 +81,7 @@ btnOps.forEach(btnOperation=>{
     btnOperation.addEventListener('click',()=>{
 
         operations= btnOperation.textContent;
-        setOperation(operations);
+        setOperation();
         // console.log(operation);
     })
 });
@@ -121,5 +120,40 @@ btnNumPad.forEach(btnNum=> {
     // console.log(parseInt(num));
 
 });
+});
+
+function setEverythingclear(){
+    num1 = '';
+    num2= '';
+    displayLine.textContent='';
+    operations = '';
+}
+const btnDelete = document.querySelector('.btnRemove');
+
+btnDelete.addEventListener('click',()=>{
+
+
+setEverythingclear();
+
+
+});
+
+
+const btnEqual = document.querySelector('.btnEqual')
+
+btnEqual.addEventListener('click',()=>{
+
+    if(operations === '÷' && parseInt(num2) === 0 )
+    {
+        alert('CANT DIVIDE BY ZERO');
+        
+
+    }
+    else{
+        getOperate(operations, parseInt(num1), parseInt(num2));
+    }
+
+
+
 });
 
