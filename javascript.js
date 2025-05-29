@@ -34,6 +34,8 @@ function getOperate(operation, number1, number2){
     }
 }
 
+//valuesCounter is used to in our arrays to save the right values
+let valuesCounter = 0;
 //function and variables to create the display
 const displayLine = document.createElement('p');
 const displayDIV = document.querySelector('.display');
@@ -122,6 +124,7 @@ const btnNumPad = document.querySelectorAll('.btn');
 let num1 = '';
 let num2 = '';
 
+let numArray = [];
 //Using to keep track of the number after pressing equal
 let count = 0;
 // console.log(btnCall);
@@ -135,6 +138,7 @@ btnNumPad.forEach(btnNum=> {
         {
             count=0;
             num1='';
+            
         }
 
         if(displayLine.textContent.length > 20)
@@ -145,6 +149,15 @@ btnNumPad.forEach(btnNum=> {
         if(operations === '' && count ===0 )
         {
             num1+= btnNum.textContent;
+
+            if(numArray[valuesCounter] === undefined) {
+                numArray[valuesCounter] = btnNum.textContent;
+            }
+            else{
+                 numArray[valuesCounter] = numArray[valuesCounter] + btnNum.textContent;
+            console.log(numArray);
+            }
+           
             setValues(num1);
         }
         else if(operations != '')
