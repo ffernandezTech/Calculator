@@ -74,15 +74,47 @@ function setOperation()
    
 }
 
+function setEverythingclear(){
+    num1 = '';
+    num2= '';
+    displayLine.textContent='';
+    operations = '';
+    displayLine.style.fontSize = '40px';
+}
+const btnDelete = document.querySelector('.btnRemove');
+
+btnDelete.addEventListener('click',()=>{
+
+
+setEverythingclear();
+
+
+});
+
+
+
+
 const btnOps = document.querySelectorAll('.btnOps');
 let operations = '';
 
 btnOps.forEach(btnOperation=>{
     btnOperation.addEventListener('click',()=>{
 
+      
+
+    
+
         operations= btnOperation.textContent;
+        
         setOperation();
         // console.log(operation);
+
+        
+
+
+
+
+
     })
 });
 
@@ -107,7 +139,7 @@ btnNumPad.forEach(btnNum=> {
 
         if(displayLine.textContent.length > 20)
         {
-            displayLine.style.fontSize = '25px';
+            displayLine.style.fontSize = '36px';
         }
     
         if(operations === '' && count ===0 )
@@ -130,21 +162,6 @@ btnNumPad.forEach(btnNum=> {
 });
 });
 
-function setEverythingclear(){
-    num1 = '';
-    num2= '';
-    displayLine.textContent='';
-    operations = '';
-}
-const btnDelete = document.querySelector('.btnRemove');
-
-btnDelete.addEventListener('click',()=>{
-
-
-setEverythingclear();
-
-
-});
 
 
 const btnEqual = document.querySelector('.btnEqual')
@@ -157,6 +174,10 @@ btnEqual.addEventListener('click',()=>{
         alert('CANT DIVIDE BY ZERO');
         
 
+    }
+    else if(num2==='')
+    {
+        alert('enter second number');
     }
     else{
         console.log(`first number ${num1} with this operation ${operations} and finally this final number ${num2}`)
