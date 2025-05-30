@@ -46,21 +46,24 @@ function setValues(setUserinput)
 
     
 
-    if(operations=== '')
-    {
-        displayLine.textContent = setUserinput;
-        displayDIV.appendChild(displayLine);
-    }
-    else 
-    {
-        let displayText = displayLine.textContent.concat(setUserinput);
+    // if(operations=== '')
+    // {
+    //     displayLine.textContent = setUserinput;
+    //     displayDIV.appendChild(displayLine);
+    // }
+    // else 
+    // {
+    //     let displayText = displayLine.textContent.concat(setUserinput);
 
 
-        // console.log(displayText);
+    //     // console.log(displayText);
 
-        displayLine.textContent= displayText;
+    //     displayLine.textContent= displayText;
  
-    }
+    // }
+
+    displayLine.textContent = setUserinput;
+    displayDIV.appendChild(displayLine);
 
 
 }
@@ -68,13 +71,17 @@ function setValues(setUserinput)
 
 //function to add the operation to the string and save said operation to be used latter
 // let getOps = '';
-function setOperation()
-{
 
-    displayLine.textContent= displayLine.textContent +" " + operations + ' ';
+//Removing this operation because no longer going to display it.
+//Display will only have the digits user entered for each number
+//and it will clear and start displaying the second number after OP
+// function setOperation()
+// {
+
+//     displayLine.textContent= displayLine.textContent +" " + operations + ' ';
  
    
-}
+// }
 
 function setEverythingclear(){
     num1 = '';
@@ -149,21 +156,12 @@ btnNumPad.forEach(btnNum=> {
         if(operations === '' && count ===0 )
         {
             num1+= btnNum.textContent;
-
-            if(numArray[valuesCounter] === undefined) {
-                numArray[valuesCounter] = btnNum.textContent;
-            }
-            else{
-                 numArray[valuesCounter] = numArray[valuesCounter] + btnNum.textContent;
-            console.log(numArray);
-            }
-           
             setValues(num1);
         }
         else if(operations != '')
         {
             num2 += btnNum.textContent;
-            setValues(btnNum.textContent);
+            setValues(num2);
         }
 
     
