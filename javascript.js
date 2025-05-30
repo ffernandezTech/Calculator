@@ -82,6 +82,29 @@ function setValues(setUserinput)
  
    
 // }
+function getSolution()
+{
+    if(operations === '÷' && parseInt(num2) === 0 )
+    {
+        alert('CANT DIVIDE BY ZERO');
+        
+
+    }
+    else if(num2==='')
+    {
+        alert('enter second number');
+    }
+    else{
+        console.log(`first number ${num1} with this operation ${operations} and finally this final number ${num2}`)
+        num1 = getOperate(operations, parseInt(num1), parseInt(num2));
+        console.log(`THIS IS THE NUMBER 1 after operation ${num1}`);
+        count = 1;
+        operations = '';
+        num2 = '';
+       
+    }
+
+}
 
 function setEverythingclear(){
     num1 = '';
@@ -113,6 +136,14 @@ btnOps.forEach(btnOperation=>{
 
     
 
+
+        if(operations!='')
+        {
+            
+            operations= btnOperation.textContent;
+            getSolution();
+        }
+        else{
         operations= btnOperation.textContent;
         
         setOperation();
@@ -120,6 +151,8 @@ btnOps.forEach(btnOperation=>{
 
         
 
+        }
+        
 
 
 
@@ -175,31 +208,13 @@ btnNumPad.forEach(btnNum=> {
 
 
 
+
 const btnEqual = document.querySelector('.btnEqual')
 
 btnEqual.addEventListener('click',()=>{
 
    
-    if(operations === '÷' && parseInt(num2) === 0 )
-    {
-        alert('CANT DIVIDE BY ZERO');
-        
-
-    }
-    else if(num2==='')
-    {
-        alert('enter second number');
-    }
-    else{
-        console.log(`first number ${num1} with this operation ${operations} and finally this final number ${num2}`)
-        num1 = getOperate(operations, parseInt(num1), parseInt(num2));
-        console.log(`THIS IS THE NUMBER 1 after operation ${num1}`);
-        count = 1;
-        operations = '';
-        num2 = '';
-       
-    }
-
+   getSolution();
     
 
 
