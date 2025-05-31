@@ -96,11 +96,27 @@ function getSolution()
     }
     else{
         // console.log(`first number ${num1} with this operation ${operations} and finally this final number ${num2}`)
-        num1 = getOperate(operations, parseInt(num1), parseInt(num2));
-        displayLine.textContent= num1;
-        // console.log(`THIS IS THE NUMBER 1 after operation ${num1}`);
-        count = 1;
-        num2 = '';
+
+
+
+
+        if(num1.includes('.')|| num2.includes('.'))
+        {
+
+            num1 = parseFloat(getOperate(operations, parseFloat(num1), parseFloat(num2)));
+            displayLine.textContent= num1;
+            // console.log(`THIS IS THE NUMBER 1 after operation ${num1}`);
+            count = 1;
+            num2 = '';
+        }
+        else{
+            num1 = getOperate(operations, parseInt(num1), parseInt(num2));
+            displayLine.textContent= num1;
+            // console.log(`THIS IS THE NUMBER 1 after operation ${num1}`);
+            count = 1;
+            num2 = '';
+        }
+        
         
        
     }
@@ -225,10 +241,39 @@ const btnEqual = document.querySelector('.btnEqual')
 btnEqual.addEventListener('click',()=>{
 
    
-   getSolution();
     
+   getSolution();
+   operations='';
 
 
 
 });
+
+const btnDecimal = document.querySelector('.btnDecimal')
+
+btnDecimal.addEventListener('click',()=>{
+
+   
+    
+    if(num1!=''&& num2==='')
+    {
+       
+
+        if(!num1.includes('.'))
+        {
+         num1 = num1+'.';
+        setValues(num1);
+        }
+    }
+    else
+    {
+         if(!num2.includes('.'))
+        {
+            num2 = num2+'.';
+         setValues(num2);
+        }
+    }
+
+
+})
 
