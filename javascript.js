@@ -95,14 +95,18 @@ function getSolution()
         alert('enter second number');
     }
     else{
-        console.log(`first number ${num1} with this operation ${operations} and finally this final number ${num2}`)
+        // console.log(`first number ${num1} with this operation ${operations} and finally this final number ${num2}`)
         num1 = getOperate(operations, parseInt(num1), parseInt(num2));
-        console.log(`THIS IS THE NUMBER 1 after operation ${num1}`);
+        displayLine.textContent= num1;
+        // console.log(`THIS IS THE NUMBER 1 after operation ${num1}`);
         count = 1;
-        operations = '';
         num2 = '';
+        
        
     }
+
+    //Issue with SOLUTION function that causes old OPS to remain,
+    //might be problem somewhere else.
 
 }
 
@@ -139,14 +143,21 @@ btnOps.forEach(btnOperation=>{
 
         if(operations!='')
         {
+            if(num2==='')
+            {
+                operations=btnOperation.textContent;
+            }
+            else{
+                getSolution();
+                operations= btnOperation.textContent;
+                // operations= btnOperation.textContent;
+            }
             
-            operations= btnOperation.textContent;
-            getSolution();
         }
         else{
         operations= btnOperation.textContent;
         
-        setOperation();
+        // setOperation();
         // console.log(operation);
 
         
