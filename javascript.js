@@ -84,6 +84,9 @@ function setValues(setUserinput)
 // }
 function getSolution()
 {
+
+
+    console.log(typeof(num1) + ' THis is the value of num1 before solving')
     if(operations === '÷' && parseInt(num2) === 0 )
     {
         alert('CANT DIVIDE BY ZERO');
@@ -94,37 +97,31 @@ function getSolution()
     {
         alert('enter second number');
     }
-    else{
-        // console.log(`first number ${num1} with this operation ${operations} and finally this final number ${num2}`)
-
-
-
-
-        if(num1.includes('.')|| num2.includes('.'))
+    else if(num1.includes('.') || num2.includes('.'))
         {
-
             num1 = parseFloat(getOperate(operations, parseFloat(num1), parseFloat(num2)));
             displayLine.textContent= num1;
-            // console.log(`THIS IS THE NUMBER 1 after operation ${num1}`);
+            console.log(`THIS IS THE NUMBER 1 after operation ${num1}`);
             count = 1;
             num2 = '';
         }
-        else{
-            num1 = getOperate(operations, parseInt(num1), parseInt(num2));
+    else{
+            num1 = getOperate(operations, parseInt(num1), parseInt(num2)).toString();
             displayLine.textContent= num1;
-            // console.log(`THIS IS THE NUMBER 1 after operation ${num1}`);
+            console.log(`THIS IS NUMBER 1 after operation ${num1}`);
             count = 1;
             num2 = '';
         }
         
         
-       
-    }
+       console.log(typeof(num1) + ' THis is the value of num1 after solving')
 
+
+    }
+        
     //Issue with SOLUTION function that causes old OPS to remain,
     //might be problem somewhere else.
 
-}
 
 function setEverythingclear(){
     num1 = '';
@@ -217,11 +214,13 @@ btnNumPad.forEach(btnNum=> {
         {
             num1+= btnNum.textContent;
             setValues(num1);
+            console.log(`This is the first number ${num1}`)
         }
         else if(operations != '')
         {
             num2 += btnNum.textContent;
             setValues(num2);
+             console.log(`This is the second number ${num2}`)
         }
 
     
@@ -254,7 +253,7 @@ const btnDecimal = document.querySelector('.btnDecimal')
 btnDecimal.addEventListener('click',()=>{
 
    
-    
+    //NEEDS TO WORK IF USER ENTERS .02.
     if(num1!=''&& num2==='')
     {
        
