@@ -13,7 +13,7 @@ function getDivision(number1,number2){
     return number1/number2;
 }
 function getSolution(operation, number1, number2){
-    //user saves operation and numbers after pressing enter.
+    //user saves operation and numbers after pressing enter or another Operation.
 
 
     //simple switch case that takes our parameter and  compares to our case
@@ -34,34 +34,14 @@ function getSolution(operation, number1, number2){
     }
 }
 
-//valuesCounter is used to in our arrays to save the right values
-let valuesCounter = 0;
 //function and variables to create the display
 const displayLine = document.createElement('p');
 const displayDIV = document.querySelector('.display');
 
 
-function setValues(setUserinput)
+function setDisplay(setUserinput)
 {
-
-    
-
-    // if(operations=== '')
-    // {
-    //     displayLine.textContent = setUserinput;
-    //     displayDIV.appendChild(displayLine);
-    // }
-    // else 
-    // {
-    //     let displayText = displayLine.textContent.concat(setUserinput);
-
-
-    //     // console.log(displayText);
-
-    //     displayLine.textContent= displayText;
- 
-    // }
-
+//serUserInput is whatever number is currently being entered between Num1 or Num2 depends on other conditions
     displayLine.textContent = setUserinput;
     displayDIV.appendChild(displayLine);
 
@@ -69,9 +49,11 @@ function setValues(setUserinput)
 }
 function dblCheck()
 {
+    // console.log(typeof(num1) + ' This is the value of num1 before solving')
 
 
-    console.log(typeof(num1) + ' THis is the value of num1 before solving')
+
+
     if(operations === '÷' && parseInt(num2) === 0 && !num2.includes('.'))
     {
         alert('CANT DIVIDE BY ZERO');
@@ -84,16 +66,27 @@ function dblCheck()
     }
     else if(num1.includes('.') || num2.includes('.'))
         {
-            num1 = parseFloat(getSolution(operations, parseFloat(num1), parseFloat(num2)));
+            num1 = getSolution(operations, parseFloat(num1), parseFloat(num2)).toString();
+
             displayLine.textContent= num1;
-            console.log(`THIS IS THE NUMBER 1 after operation ${num1}`);
+
+
+            // console.log(`THIS IS THE NUMBER 1 after operation ${num1}`);
+
+
+
             count = 1;
             num2 = '';
         }
     else{
             num1 = getSolution(operations, parseInt(num1), parseInt(num2)).toString();
+
             displayLine.textContent= num1;
-            console.log(`THIS IS NUMBER 1 after operation ${num1}`);
+
+
+            // console.log(`THIS IS NUMBER 1 after operation ${num1}`);
+
+
             count = 1;
             num2 = '';
         }
@@ -201,13 +194,13 @@ btnNumPad.forEach(btnNum=> {
         if(operations === '' && count ===0 )
         {
             num1+= btnNum.textContent;
-            setValues(num1);
+            setDisplay(num1);
             console.log(`This is the first number ${num1}`)
         }
         else if(operations != '')
         {
             num2 += btnNum.textContent;
-            setValues(num2);
+            setDisplay(num2);
              console.log(`This is the second number ${num2}`)
         }
 
@@ -249,7 +242,7 @@ btnDecimal.addEventListener('click',()=>{
         if(!num1.includes('.'))
         {
          num1 = num1+'.';
-        setValues(num1);
+        setDisplay(num1);
         }
     }
     else if(decimalOPsTracker!=0)
@@ -257,7 +250,7 @@ btnDecimal.addEventListener('click',()=>{
          if(!num2.includes('.'))
         {
             num2 = num2+'.';
-         setValues(num2);
+         setDisplay(num2);
         }
     }
 
