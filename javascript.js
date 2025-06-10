@@ -66,9 +66,13 @@ function dblCheck()
     }
     else if(num1.includes('.') || num2.includes('.'))
         {
-            num1 = getSolution(operations, parseFloat(num1), parseFloat(num2)).toString();
+            num1 = getSolution(operations, parseFloat(num1), parseFloat(num2))
+            
+            let roundedNum1 = num1.toFixed(4);
+           
+            displayLine.textContent= roundedNum1;
 
-            displayLine.textContent= num1;
+            num1 = num1.toString();
 
 
             // console.log(`THIS IS THE NUMBER 1 after operation ${num1}`);
@@ -258,7 +262,7 @@ btnDecimal.addEventListener('click',()=>{
    
     //decimalOPsTracker is to make sure that the user can enter a starting
     //decimal for the second number and it wont be placed at the end of the first number
-    
+
     if(decimalOPsTracker===0)
     {
        
