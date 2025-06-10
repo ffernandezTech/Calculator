@@ -12,7 +12,7 @@ function getMultiplication(number1,number2){
 function getDivision(number1,number2){
     return number1/number2;
 }
-function getOperate(operation, number1, number2){
+function getSolution(operation, number1, number2){
     //user saves operation and numbers after pressing enter.
 
 
@@ -67,22 +67,7 @@ function setValues(setUserinput)
 
 
 }
-
-
-//function to add the operation to the string and save said operation to be used latter
-// let getOps = '';
-
-//Removing this operation because no longer going to display it.
-//Display will only have the digits user entered for each number
-//and it will clear and start displaying the second number after OP
-// function setOperation()
-// {
-
-//     displayLine.textContent= displayLine.textContent +" " + operations + ' ';
- 
-   
-// }
-function getSolution()
+function dblCheck()
 {
 
 
@@ -99,14 +84,14 @@ function getSolution()
     }
     else if(num1.includes('.') || num2.includes('.'))
         {
-            num1 = parseFloat(getOperate(operations, parseFloat(num1), parseFloat(num2)));
+            num1 = parseFloat(getSolution(operations, parseFloat(num1), parseFloat(num2)));
             displayLine.textContent= num1;
             console.log(`THIS IS THE NUMBER 1 after operation ${num1}`);
             count = 1;
             num2 = '';
         }
     else{
-            num1 = getOperate(operations, parseInt(num1), parseInt(num2)).toString();
+            num1 = getSolution(operations, parseInt(num1), parseInt(num2)).toString();
             displayLine.textContent= num1;
             console.log(`THIS IS NUMBER 1 after operation ${num1}`);
             count = 1;
@@ -145,6 +130,7 @@ setEverythingclear();
 
 const btnOps = document.querySelectorAll('.btnOps');
 let operations = '';
+let decimalOPsTracker = 0;
 
 btnOps.forEach(btnOperation=>{
     btnOperation.addEventListener('click',()=>{
@@ -161,7 +147,7 @@ btnOps.forEach(btnOperation=>{
                 operations=btnOperation.textContent;
             }
             else{
-                getSolution();
+                dblCheck();
                 operations= btnOperation.textContent;
                 // operations= btnOperation.textContent;
             }
@@ -169,6 +155,8 @@ btnOps.forEach(btnOperation=>{
         }
         else{
         operations= btnOperation.textContent;
+        decimalOPsTracker++;
+
         
         // setOperation();
         // console.log(operation);
@@ -241,7 +229,7 @@ btnEqual.addEventListener('click',()=>{
 
    
     
-   getSolution();
+   dblCheck();
    operations='';
 
 
@@ -264,7 +252,7 @@ btnDecimal.addEventListener('click',()=>{
         setValues(num1);
         }
     }
-    else
+    else if(decimalOPsTracker!=0)
     {
          if(!num2.includes('.'))
         {
