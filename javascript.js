@@ -72,7 +72,7 @@ function dblCheck()
 
 
     console.log(typeof(num1) + ' THis is the value of num1 before solving')
-    if(operations === '÷' && parseInt(num2) === 0 )
+    if(operations === '÷' && parseInt(num2) === 0 && !num2.includes('.'))
     {
         alert('CANT DIVIDE BY ZERO');
         
